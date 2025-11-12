@@ -584,3 +584,73 @@ body {
     transform: none;
     box-shadow: none;
 }
+/* ===== 图片展示样式 - 修正版 ===== */
+.app-interfaces {
+    display: flex;
+    gap: 3rem; /* 增加间距 */
+    justify-content: center; /* 确保中线对齐 */
+    align-items: flex-start; /* 顶部对齐 */
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.interface-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    /* 移除固定宽度，使用灵活尺寸 */
+    max-width: 280px;
+    width: 100%;
+}
+
+.interface-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.interface-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+
+/* 确保两个卡片尺寸一致 */
+.app-interfaces .interface-card:first-child,
+.app-interfaces .interface-card:last-child {
+    max-width: 280px; /* 统一尺寸 */
+    flex: 0 1 280px; /* 灵活但一致的基准尺寸 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .app-interfaces {
+        flex-direction: column;
+        gap: 2rem; /* 手机端更大的间距 */
+        align-items: center; /* 手机端居中 */
+    }
+    
+    .interface-card {
+        padding: 1.2rem;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .interface-card {
+        padding: 1rem;
+        max-width: 220px;
+    }
+    
+    .app-interfaces {
+        gap: 1.5rem;
+    }
+}
