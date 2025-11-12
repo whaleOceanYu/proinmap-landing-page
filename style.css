@@ -570,3 +570,17 @@ body {
         font-size: 2rem;
     }
 }
+
+/* Fix contact button hover effect */
+.badge-info .btn-secondary {
+    color: #667eea;
+    border-color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.badge-info .btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: none;
+    box-shadow: none;
+}
